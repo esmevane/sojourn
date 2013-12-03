@@ -1,0 +1,23 @@
+{
+  "name": "panoply",
+  "private": true,
+  "devDependencies": {
+    "coffee-script": "",
+    "grunt": "",
+    "grunt-browserify": "",
+    "grunt-contrib-coffee": "",
+    "grunt-contrib-sass": "",
+    "grunt-contrib-watch": "",
+    "grunt-express": "",
+    "expect.js": "",
+    "express": "",
+    "matchdep": "",
+    "mocha": ""
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": [
+      "node_modules/mocha/bin/mocha -r expect.js -R spec --compilers coffee:coffee-script --recursive"
+    ]
+  }
+}
