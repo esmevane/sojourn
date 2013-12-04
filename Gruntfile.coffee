@@ -20,6 +20,12 @@ module.exports = (grunt) ->
         options:
           port: 9000
           server: './server'
+    mochaTest:
+      test:
+        options:
+          reporter: 'spec'
+          require: [ 'expect.js', 'coffee-script' ]
+        src: [ 'spec/**/*.coffee' ]
     sass:
       compile:
         expand: true
@@ -34,3 +40,4 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'serve', [ 'express', 'watch' ]
   grunt.registerTask 'build', [ 'coffee', 'sass', 'browserify' ]
+  grunt.registerTask 'test', [ 'mochaTest' ]

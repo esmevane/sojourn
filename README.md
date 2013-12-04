@@ -17,5 +17,5 @@ grunt serve
 
 ## How to test
 
-* Create test files in `test`, using the mocha BDD syntax.
-* `npm test` to run test scripts.
+* Create test files in `spec`, using the mocha BDD syntax.
+* `grunt test` to run test scripts.

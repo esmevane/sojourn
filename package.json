@@ -1,5 +1,5 @@
 {
-  "name": "panoply",
+  "name": "sojourn",
   "private": true,
   "devDependencies": {
     "coffee-script": "",
@@ -9,15 +9,10 @@
     "grunt-contrib-sass": "",
     "grunt-contrib-watch": "",
     "grunt-express": "",
+    "grunt-mocha-test": "",
     "expect.js": "",
     "express": "",
-    "matchdep": "",
-    "mocha": ""
+    "matchdep": ""
   },
-  "dependencies": {},
-  "scripts": {
-    "test": [
-      "node_modules/mocha/bin/mocha -r expect.js -R spec --compilers coffee:coffee-script --recursive"
-    ]
-  }
+  "dependencies": {}
 }
