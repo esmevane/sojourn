@@ -12,7 +12,8 @@
     "grunt-mocha-test": "",
     "expect.js": "",
     "express": "",
-    "matchdep": ""
+    "matchdep": "",
+    "node-neat": ""
   },
   "dependencies": {}
 }
