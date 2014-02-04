@@ -1,5 +1,7 @@
 # Sojourn
 
+Sojourn creates a rapid prototyping environment for single-page applications and compiles the output into a single, uglified application file.
+
 ## Installation
 
 ```
@@ -21,9 +23,7 @@ grunt serve
 
 ## How to use
 
-Sojourn is a toolkit for rapid prototyping single-page applications.
-
-* Any CoffeeScript or Sass files you create in `assets/scripts` or `assets/styles` respectively will be compiled on save.
+* Any CoffeeScript, JavaScript or Sass files you create in `assets/scripts` or `assets/styles` respectively will be compiled on save.
 * `application.coffee` serves as the entry point for the logic of your prototype.
 * Use CommonJS require-style syntax in application.coffee in order to include other files in your application.  On save, Sojourn uses browserify to compile all of these required scripts together.
 
@@ -32,6 +32,6 @@ Sojourn is a toolkit for rapid prototyping single-page applications.
 * Create test files in `spec`, using the mocha BDD syntax.
 * `grunt test` to run test scripts.
 
-## Todo
+## TODO
 
-* Move backbone, underscore and jquery dependencies into application.js via require
+* Turn into yeoman generator
