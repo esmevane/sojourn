@@ -30,7 +30,7 @@ module.exports = (grunt) ->
       test:
         options:
           reporter: 'spec'
-          require: ['expect.js', 'coffee-script']
+          require: ['coffee-script', './spec/spec_helper.coffee']
         src: ['spec/**/*.coffee']
     sass:
       compile:
