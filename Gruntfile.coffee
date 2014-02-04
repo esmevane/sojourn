@@ -15,6 +15,12 @@ module.exports = (grunt) ->
         src: [ '**/*.coffee' ]
         dest: 'tmp/scripts'
         ext: ".js"
+    copy:
+      scripts:
+        expand: true
+        cwd: 'assets/scripts'
+        src: [ '**/*.js' ]
+        dest: 'tmp/scripts'
     express:
       server:
         options:
@@ -39,5 +45,5 @@ module.exports = (grunt) ->
         tasks: [ 'build' ]
 
   grunt.registerTask 'serve', [ 'express', 'watch' ]
-  grunt.registerTask 'build', [ 'coffee', 'sass', 'browserify' ]
+  grunt.registerTask 'build', [ 'coffee', 'copy', 'sass', 'browserify' ]
   grunt.registerTask 'test', [ 'mochaTest' ]
