@@ -7,7 +7,7 @@ module.exports = (grunt) ->
     browserify:
       compile:
         files:
-          'tmp/pkg/scripts/application.js': ['tmp/src/scripts/application.js']
+          'app/scripts/application.js': ['tmp/src/scripts/application.js']
     coffee:
       compile:
         expand: true
@@ -21,9 +21,6 @@ module.exports = (grunt) ->
         cwd: 'assets/scripts'
         src: ['**/*.js']
         dest: 'tmp/src/scripts'
-      app:
-        files:
-          'tmp/pkg/scripts/application.js'
     express:
       server:
         options:
@@ -45,7 +42,7 @@ module.exports = (grunt) ->
     uglify:
       build:
         files:
-          'app/scripts/application.min.js': ['tmp/pkg/scripts/application.js']
+          'app/scripts/application.min.js': ['app/scripts/application.js']
     watch:
       express:
         files: ['assets/**/*.coffee', 'assets/**/*.sass']
