@@ -16,11 +16,14 @@ module.exports = (grunt) ->
         dest: 'tmp/src/scripts'
         ext: ".js"
     copy:
-      scripts:
+      sources:
         expand: true
         cwd: 'assets/scripts'
         src: ['**/*.js']
         dest: 'tmp/src/scripts'
+      app:
+        files:
+          'tmp/pkg/scripts/application.js'
     express:
       server:
         options:
@@ -42,7 +45,7 @@ module.exports = (grunt) ->
     uglify:
       build:
         files:
-          'app/scripts/application.js': ['tmp/pkg/scripts/application.js']
+          'app/scripts/application.min.js': ['tmp/pkg/scripts/application.js']
     watch:
       express:
         files: ['assets/**/*.coffee', 'assets/**/*.sass']
@@ -51,3 +54,5 @@ module.exports = (grunt) ->
   grunt.registerTask 'serve', ['express', 'watch']
   grunt.registerTask 'build', ['coffee', 'copy', 'sass', 'browserify', 'uglify']
   grunt.registerTask 'test', ['mochaTest']
+
+  grunt.registerTask 'default', ['test', 'build']
