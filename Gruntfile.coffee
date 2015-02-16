@@ -8,13 +8,13 @@ module.exports = (grunt) ->
       compile:
         files:
           'app/scripts/application.js': ['tmp/src/scripts/application.js']
-    coffee:
+    cjsx:
       compile:
         expand: true
         cwd: 'assets/scripts'
         src: ['**/*.coffee']
         dest: 'tmp/src/scripts'
-        ext: ".js"
+        ext: '.js'
     copy:
       sources:
         expand: true
@@ -49,7 +49,7 @@ module.exports = (grunt) ->
         tasks: ['build']
 
   grunt.registerTask 'serve', ['express', 'watch']
-  grunt.registerTask 'build', ['coffee', 'copy', 'sass', 'browserify', 'uglify']
+  grunt.registerTask 'build', ['cjsx', 'copy', 'sass', 'browserify', 'uglify']
   grunt.registerTask 'test', ['mochaTest']
 
   grunt.registerTask 'default', ['test', 'build']

@@ -1,6 +1,8 @@
-# Sojourn provides the following libraries out of the box - uncomment
-# or include these files in order to use them in your script.
-
-# $        = require 'jquery'
-# Backbone = require 'backbone'
-# _        = require 'underscore'
+# $       = require 'jquery'
+# React   = require 'react'
+# _       = require 'underscore'
+# content = <h1>Welcome to Sojourn</h1>
+#
+# $(document).ready ->
+#   body = _.first document.getElementsByTagName('body')
+#   React.render content, body
