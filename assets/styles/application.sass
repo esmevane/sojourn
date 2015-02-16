@@ -1,0 +1,28 @@
+@import bourbon
+@import neat
+
+$font-size: 16px
+$font-color: #4c4c4c
+$background-color: #fbf3e2
+
+=absolute-center($height)
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: $height
+  margin: auto
+
+body
+  background: $background-color
+  font:
+    family: 'Open Sans', sans-serif
+    size: $font-size
+  color: $font-color
+
+#splash-title
+  @include absolute-center($font-size * 4.25)
+  font-size: $font-size * 3
+  text-align: center
+  color: transparentize($font-color, 0.2)
