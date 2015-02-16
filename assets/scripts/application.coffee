@@ -1,15 +1,14 @@
-# $       = require 'jquery'
+# Sojourn makes the following libraries available on demand.  Simply uncomment
+# these lines to use in a bootstrap method, or, if you require them in other
+# components, add the requirements there.
+#
+# $        = require 'jquery'
+# _        = require 'underscore'
+# Backbone = require 'backbone'
+#
+
 React   = require 'react'
-_       = require 'underscore'
-body    = _.first document.getElementsByTagName('body')
+element = document.getElementById('react-load-state')
+content = <p>React: Loaded</p>
 
-content =
-  <header className='intro-splash'>
-    <h1 className='headline'>Sojourn</h1>
-    <h2 className='byline'>Highly disposable front-end boilerplate</h2>
-    <h2 className='byline'>Script with React + Browserify + CoffeeScript</h2>
-    <h2 className='byline'>Visualize with Bourbon + Sass + Font Awesome</h2>
-    <h2 className='byline'>Keep everything tested with Mocha + Expect</h2>
-  </header>
-
-React.render content, body
+React.render content, element

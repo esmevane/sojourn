@@ -24,7 +24,7 @@ module.exports = (grunt) ->
     express:
       server:
         options:
-          port: 9000
+          port: 9001
           server: './server'
     mochaTest:
       test:

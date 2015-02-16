@@ -2,7 +2,8 @@
   "name": "sojourn",
   "private": true,
   "devDependencies": {
-    "coffee-script": "1.7.1",
+    "backbone": "^1.1.2",
+    "coffee-script": "^1.9.0",
     "expect.js": "0.2.0",
     "express": "3.4.8",
     "grunt": "0.4.2",

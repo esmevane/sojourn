@@ -5,6 +5,12 @@ $font-size: 1em
 $font-color: #4c4c4c
 $background-color: #fbf3e2
 
+$plum: #363142
+$eggplant: #553D51
+$pomegranate: #78475A
+$rose: #99535D
+$ruby-pulp: #B5635A
+
 =absolute-center($height)
   position: absolute
   top: 0
@@ -26,15 +32,48 @@ body
     size: $font-size
   color: $font-color
 
-.intro-splash
+section
+  @include outer-container
+  margin: $font-size 0
+  padding: $font-size
+
+  aside
+    @include span-columns(3)
+    font-size: $font-size * 1.5
+    color: transparentize($ruby-pulp, 0.3)
+    border-right: 3px dotted transparentize($pomegranate, 0.4)
+
+  article
+    @include span-columns(9)
+
+header
+  border-bottom: 1px dotted transparentize($pomegranate, 0.4)
+  padding-bottom: $font-size
   text-align: center
+
+footer
+  border-top: 1px dotted transparentize($pomegranate, 0.4)
+  padding-top: $font-size
+  text-align: center
+  color: transparentize($ruby-pulp, 0.8)
+
+p
+  margin-top: $font-size
+
+li
+  margin-left: $font-size
+
+.intro-splash
   color: transparentize($font-color, 0.2)
 
   .headline
     font-size: $font-size * 2.5
+    color: transparentize($eggplant, 0.3)
+    margin: $font-size * 0.5
 
   .byline
     font-size: $font-size * 1.5
+    color: transparentize($plum, 0.6)
 
   &:before
     content: url(/images/sojourn.png)

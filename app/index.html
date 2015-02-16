@@ -6,6 +6,52 @@
     <title>Sojourn</title>
   </head>
   <body>
+    <header class='intro-splash'>
+      <h1 class='headline'>Sojourn</h1>
+      <h2 class='byline'>Highly disposable front-end boilerplate.</h2>
+    </header>
+    <main>
+      <section>
+        <aside>Script</aside>
+        <article>
+          Sojourn is bundled with a toolchain that embraces testing and modular
+          code composition.  When you're done, "grunt build" to compile
+          everything into a single exportable file (minified version included).
+        </article>
+      </section>
+      <section>
+        <aside>Visualize</aside>
+        <article>
+          Embark on a wondrous prototyping experience without needing to take
+          the time to install any number of visual tools.  Sojourn comes
+          pre-bundled with Sass, Bourbon + Neat, and Font Awesome.  Add any new
+          imagery or fonts with ease in the app/images and app/fonts
+          directories.
+        </article>
+      </section>
+      <section>
+        <aside>Get Started now</aside>
+        <article>
+          <ul>
+            <li>git clone git@github.com:esmevane/sojourn</li>
+            <li>cd sojourn</li>
+            <li>npm install</li>
+            <li>rm -rf .git</li>
+            <li>grunt serve</li>
+          </ul>
+          <p>
+            Sojourn will observe changes to any CoffeeScript or JavaScript file
+            in assets/scripts/**, or any Sass file in assets/styles/**.  When
+            any of those files change, it will bootstrap a new copy of the
+            application files and a simple refresh will show you your work.
+          </p>
+        </article>
+      </section>
+      <footer>
+        <p>Written by Joseph McCormick</p>
+        <div id='react-load-state' />
+      </footer>
+    </main>
   </body>
   <script src="/scripts/application.js"></script>
 </html>

@@ -14,13 +14,60 @@ body {
   font-size: 1em;
   color: #4c4c4c; }
 
-.intro-splash {
+section {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 1em 0;
+  padding: 1em; }
+  section:after {
+    content: "";
+    display: table;
+    clear: both; }
+  section aside {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 23.23176%;
+    font-size: 1.5em;
+    color: rgba(181, 99, 90, 0.7);
+    border-right: 3px dotted rgba(120, 71, 90, 0.6); }
+    section aside:last-child {
+      margin-right: 0; }
+  section article {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 74.41059%; }
+    section article:last-child {
+      margin-right: 0; }
+
+header {
+  border-bottom: 1px dotted rgba(120, 71, 90, 0.6);
+  padding-bottom: 1em;
+  text-align: center; }
+
+footer {
+  border-top: 1px dotted rgba(120, 71, 90, 0.6);
+  padding-top: 1em;
   text-align: center;
+  color: rgba(181, 99, 90, 0.2); }
+
+p {
+  margin-top: 1em; }
+
+li {
+  margin-left: 1em; }
+
+.intro-splash {
   color: rgba(76, 76, 76, 0.8); }
   .intro-splash .headline {
-    font-size: 2.5em; }
+    font-size: 2.5em;
+    color: rgba(85, 61, 81, 0.7);
+    margin: 0.5em; }
   .intro-splash .byline {
-    font-size: 1.5em; }
+    font-size: 1.5em;
+    color: rgba(54, 49, 66, 0.4); }
   .intro-splash:before {
     content: url(/images/sojourn.png);
     height: 244px;
