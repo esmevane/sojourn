@@ -3,22 +3,27 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
 body {
   background: #fbf3e2;
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   color: #4c4c4c; }
 
-#splash-title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 68px;
-  margin: auto;
-  font-size: 48px;
+.intro-splash {
   text-align: center;
   color: rgba(76, 76, 76, 0.8); }
+  .intro-splash .headline {
+    font-size: 2.5em; }
+  .intro-splash .byline {
+    font-size: 1.5em; }
+  .intro-splash:before {
+    content: url(/images/sojourn.png);
+    height: 244px;
+    width: 488px; }
 
 /*# sourceMappingURL=application.css.map */

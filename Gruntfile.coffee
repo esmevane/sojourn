@@ -36,7 +36,7 @@ module.exports = (grunt) ->
       compile:
         expand: true
         cwd: 'assets/styles'
-        src: ['**/*.sass']
+        src: ['**/*.sass', '**/*.scss']
         dest: 'app/styles'
         ext: ".css"
         options:
