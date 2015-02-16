@@ -39,6 +39,8 @@ module.exports = (grunt) ->
         src: ['**/*.sass']
         dest: 'app/styles'
         ext: ".css"
+        options:
+          loadPath: require('node-neat').includePaths
     uglify:
       build:
         files:
