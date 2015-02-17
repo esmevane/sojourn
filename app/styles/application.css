@@ -13,6 +13,13 @@ body {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
   color: #4c4c4c; }
+  @media screen and (min-width: 769px) {
+    body {
+      margin: 0 5em; } }
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+      margin: 0 1em;
+      text-align: center; } }
 
 section {
   max-width: 68em;
@@ -25,22 +32,42 @@ section {
     display: table;
     clear: both; }
   section aside {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%;
     font-size: 1.5em;
-    color: rgba(181, 99, 90, 0.7);
-    border-right: 3px dotted rgba(120, 71, 90, 0.6); }
-    section aside:last-child {
-      margin-right: 0; }
-  section article {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 74.41059%; }
-    section article:last-child {
-      margin-right: 0; }
+    color: rgba(181, 99, 90, 0.7); }
+    @media screen and (min-width: 769px) {
+      section aside {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 23.23176%;
+        border-right: 3px dotted rgba(120, 71, 90, 0.6); }
+        section aside:last-child {
+          margin-right: 0; } }
+    @media screen and (min-width: 320px) and (max-width: 480px) {
+      section aside {
+        float: left;
+        display: block;
+        margin-right: 2.35765%;
+        width: 100%; }
+        section aside:last-child {
+          margin-right: 0; } }
+  @media screen and (min-width: 769px) {
+    section article {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%; }
+      section article:last-child {
+        margin-right: 0; } }
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    section article {
+      margin: 1em 0;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%; }
+      section article:last-child {
+        margin-right: 0; } }
 
 header {
   border-bottom: 1px dotted rgba(120, 71, 90, 0.6);
@@ -56,8 +83,20 @@ footer {
 p {
   margin-top: 1em; }
 
+@media screen and (min-width: 769px) {
+  ul {
+    text-align: left; } }
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  ul {
+    margin: 1em 0;
+    list-style-type: none;
+    text-align: center; } }
+
 li {
   margin-left: 1em; }
+
+.code {
+  font-family: monospace; }
 
 .intro-splash {
   color: rgba(76, 76, 76, 0.8); }

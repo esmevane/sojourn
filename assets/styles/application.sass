@@ -31,6 +31,11 @@ body
     family: 'Open Sans', sans-serif
     size: $font-size
   color: $font-color
+  @include media(769px)
+    margin: 0 $font-size * 5
+  @include media(min-width 320px max-width 480px)
+    margin: 0 $font-size
+    text-align: center
 
 section
   @include outer-container
@@ -38,13 +43,20 @@ section
   padding: $font-size
 
   aside
-    @include span-columns(3)
+    @include media(769px)
+      @include span-columns(3)
+      border-right: 3px dotted transparentize($pomegranate, 0.4)
+    @include media(min-width 320px max-width 480px)
+      @include span-columns(12)
     font-size: $font-size * 1.5
     color: transparentize($ruby-pulp, 0.3)
-    border-right: 3px dotted transparentize($pomegranate, 0.4)
 
   article
-    @include span-columns(9)
+    @include media(769px)
+      @include span-columns(9)
+    @include media(min-width 320px max-width 480px)
+      margin: $font-size 0
+      @include span-columns(12)
 
 header
   border-bottom: 1px dotted transparentize($pomegranate, 0.4)
@@ -60,8 +72,20 @@ footer
 p
   margin-top: $font-size
 
+ul
+  @include media(769px)
+    text-align: left
+  @include media(min-width 320px max-width 480px)
+    margin: $font-size 0
+    list-style-type: none
+    text-align: center
+
 li
   margin-left: $font-size
+
+.code
+  font-family: monospace
+
 
 .intro-splash
   color: transparentize($font-color, 0.2)
