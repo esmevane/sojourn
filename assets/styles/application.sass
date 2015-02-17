@@ -25,6 +25,16 @@ $ruby-pulp: #B5635A
   padding: 0
   margin: 0
 
+a
+  text-decoration: none
+  color: $pomegranate
+
+  &:visited
+    color: darken($pomegranate, 20%)
+
+h3
+  color: $pomegranate
+
 body
   background: $background-color
   font:
@@ -65,9 +75,15 @@ header
 
 footer
   border-top: 1px dotted transparentize($pomegranate, 0.4)
-  padding-top: $font-size
+  padding: $font-size 0
   text-align: center
-  color: transparentize($ruby-pulp, 0.8)
+  color: transparentize($ruby-pulp, 0.5)
+
+  a
+    color: transparentize($pomegranate, 0.5)
+
+    &:visited
+      color: darken(transparentize($pomegranate, 0.5), 20%)
 
 p
   margin-top: $font-size
