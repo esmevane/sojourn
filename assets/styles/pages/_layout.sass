@@ -1,0 +1,61 @@
+body
+  @include media(769px)
+    margin: 0 $base-font-size * 5
+  @include media(min-width 320px max-width 480px)
+    margin: 0 $base-font-size
+    text-align: center
+
+footer
+  border-top: $base-border
+  padding: $base-font-size 0
+  text-align: center
+  color: transparentize($action-color, 0.5)
+
+  a
+    color: transparentize($accent-color, 0.5)
+
+    &:visited
+      color: darken(transparentize($accent-color, 0.5), 20%)
+
+header
+  border-bottom: $base-border
+  padding-bottom: $base-font-size
+  text-align: center
+
+section
+  @include outer-container
+  margin: $base-font-size 0
+  padding: $base-font-size
+
+  aside
+    @include media(769px)
+      @include span-columns(3)
+      border-right: $heavy-border
+    @include media(min-width 320px max-width 480px)
+      @include span-columns(12)
+    font-size: $base-font-size * 1.5
+    color: transparentize($action-color, 0.3)
+
+  article
+    @include media(769px)
+      @include span-columns(9)
+    @include media(min-width 320px max-width 480px)
+      margin: $base-font-size 0
+      @include span-columns(12)
+
+ul, ol
+  @include media(769px)
+    text-align: left
+  @include media(min-width 320px max-width 480px)
+    margin: $base-font-size 0
+    list-style-type: none
+    text-align: center
+
+p
+  margin-top: $base-font-size
+
+li
+  margin-left: $base-font-size
+
+.links
+  text-align: center
