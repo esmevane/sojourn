@@ -2,7 +2,8 @@ express = require 'express'
 app     = express()
 
 routeToFile = ({ app, route, file }) ->
-  app.get route, (request, response, next) -> response.sendfile file
+  app.get route, (request, response, next) ->
+    response.sendFile "#{__dirname}/#{file}"
 
 app.use '/fonts', express.static "app/fonts"
 app.use '/images', express.static "app/images"

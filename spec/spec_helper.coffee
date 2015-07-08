@@ -1,1 +1,3 @@
-global?.expect = require 'expect.js'
+{ expect } = require 'chai'
+
+global?.expect = expect
