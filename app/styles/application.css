@@ -17,7 +17,7 @@ button {
   color: rgba(181, 99, 90, 0.7);
   cursor: pointer;
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 1em;
   font-weight: 600;
   line-height: 1;
@@ -42,7 +42,7 @@ a.action {
   border: 1px solid rgba(181, 99, 90, 0.4);
   color: rgba(181, 99, 90, 0.7);
   display: inline-block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 1em;
   font-weight: 900;
   line-height: 2;
@@ -70,7 +70,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 1em; }
 
 label {
@@ -89,7 +89,7 @@ textarea {
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
@@ -177,42 +177,48 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #fbf3e2;
   color: #333333;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-size: 1em;
+  font-weight: lighter;
   line-height: 1.5; }
 
 h1 {
   color: rgba(85, 61, 81, 0.7);
   font-size: 2em;
+  font-weight: lighter;
   line-height: 2.4;
   margin: 0.5em 0; }
 
 h2 {
   color: rgba(54, 49, 66, 0.4);
   font-size: 1.75em;
+  font-weight: lighter;
   line-height: 2.1;
   margin: 0.45em 0; }
 
 h3 {
   color: #78475A;
   font-size: 1.5em;
+  font-weight: lighter;
   line-height: 1.8;
   margin: 0.4em 0; }
 
 h4 {
   font-size: 1.25em;
+  font-weight: lighter;
   line-height: 1.5;
   margin: 0.35em 0; }
 
 h5 {
   font-size: 1em;
+  font-weight: lighter;
   line-height: 1.2;
   margin: 0.3em 0; }
 
 h6 {
   color: #B5635A;
-  font-weight: bolder;
   font-size: 1em;
+  font-weight: lighter;
   line-height: 1.2;
   margin: 0 0 0.75em;
   text-transform: uppercase; }

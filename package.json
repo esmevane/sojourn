@@ -2,6 +2,7 @@
   "name": "sojourn",
   "version": "0.0.1",
   "homepage": "https://github.com/esmevane/sojourn",
+  "private": true,
   "authors": [
     {
       "name": "Joseph McCormick",

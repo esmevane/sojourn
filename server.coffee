@@ -5,7 +5,6 @@ routeToFile = ({ app, route, file }) ->
   app.get route, (request, response, next) ->
     response.sendFile "#{__dirname}/#{file}"
 
-app.use '/fonts', express.static "app/fonts"
 app.use '/images', express.static "app/images"
 app.use '/scripts', express.static "app/scripts"
 app.use '/styles', express.static "app/styles"
