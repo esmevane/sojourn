@@ -5,34 +5,39 @@ module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
     browserify:
-      compile:
-        files:
-          'app/scripts/application.js': ['tmp/src/scripts/application.js']
-    cjsx:
-      compile:
+      assets:
+        expand: true
+        cwd: 'tmp/src/assets'
+        src: ['*.js', '!**/_*.js']
+        dest: 'app/scripts'
+      lib:
+        expand: true
+        cwd: 'tmp/src/lib'
+        src: ['*.js', '!**/_*.js']
+        dest: 'app/scripts/lib'
+    babel:
+      options:
+        sourceMap: true
+      assets:
         expand: true
         cwd: 'assets/scripts'
-        src: ['**/*.coffee']
-        dest: 'tmp/src/scripts'
-        ext: '.js'
-      config:
-        expand: true
-        cwd: 'config'
-        src: ['**/*.coffee']
-        dest: 'tmp/src/config'
+        src: ['**/*.es6']
+        dest: 'tmp/src/assets'
         ext: '.js'
       lib:
         expand: true
-        cwd: 'lib'
-        src: ['**/*.coffee']
+        cwd: 'lib/'
+        src: ['**/*.es6']
         dest: 'tmp/src/lib'
         ext: '.js'
+    clean:
+      tmp: ['tmp/src/**/*.js']
     copy:
-      sources:
+      assets:
         expand: true
         cwd: 'assets/scripts'
         src: ['**/*.js']
-        dest: 'tmp/src/scripts'
+        dest: 'tmp/src/assets'
       lib:
         expand: true
         cwd: 'lib'
@@ -47,8 +52,8 @@ module.exports = (grunt) ->
       test:
         options:
           reporter: 'spec'
-          require: ['coffee-script', './spec/spec_helper.coffee']
-        src: ['spec/**/*.coffee']
+          require: ['babel-core/register', './spec/spec_helper.es6']
+        src: ['spec/**/*.es6']
     sass:
       compile:
         expand: true
@@ -60,15 +65,25 @@ module.exports = (grunt) ->
           loadPath: require('node-neat').includePaths
     uglify:
       build:
-        files:
-          'app/scripts/application.min.js': ['app/scripts/application.js']
+        expand: true
+        cwd: 'app/scripts'
+        src: ['**/*.js', '!**/*.min.js']
+        dest: 'app/scripts'
+        ext: '.min.js'
     watch:
       express:
-        files: ['assets/**/*.coffee', 'assets/**/*.sass', 'lib/**/*.coffee']
+        files: [
+          'assets/**/*.es6'
+          'assets/**/*.js'
+          'assets/**/*.sass'
+          'assets/**/*.scss'
+        ]
         tasks: ['build']
 
-  grunt.registerTask 'serve', ['express', 'watch']
-  grunt.registerTask 'build', ['cjsx', 'copy', 'sass', 'browserify', 'uglify']
-  grunt.registerTask 'test', ['mochaTest']
+  grunt.registerTask 'serve',   ['express', 'watch']
+  grunt.registerTask 'compile', ['sass', 'browserify', 'uglify']
+  grunt.registerTask 'prepare', ['babel', 'copy']
+  grunt.registerTask 'build',   ['prepare', 'compile', 'clean']
+  grunt.registerTask 'test',    ['mochaTest']
 
   grunt.registerTask 'default', ['test', 'build']
