@@ -38,9 +38,9 @@ module.exports = {
   },
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   output: {
-    path:       path.join(__dirname, 'app', 'scripts'),
+    path:       path.join(__dirname, 'app', 'assets'),
     filename:   'application.js',
-    publicPath: 'http://localhost:' + meta.port + '/scripts/'
+    publicPath: 'http://localhost:' + meta.port + '/assets/'
   },
   module: {
     loaders: [

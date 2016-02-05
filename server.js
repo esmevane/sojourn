@@ -12,13 +12,13 @@ var url     = require('url');
 var app     = express();
 var config  = require('./webpack.config');
 var port    = config.meta.port - 1;
-var scripts = "http://localhost:" + config.meta.port + "/scripts";
+var scripts = "http://localhost:" + config.meta.port + "/assets";
 
 app.use('/images', express.static("app/images"));
-app.use('/styles', express.static("app/styles"));
+app.use('/static', express.static("app/static"));
 app.use('/api', JsonServer.router(JsonDB.ApiDb));
 
-app.use('/scripts', proxy(url.parse(scripts)));
+app.use('/assets', proxy(url.parse(scripts)));
 
 app.get('/:file', function(request, response, next) {
   var htmlFile = "" + request.params.file + ".html";
