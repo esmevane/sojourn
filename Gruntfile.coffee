@@ -10,16 +10,6 @@ module.exports = (grunt) ->
           reporter: 'spec'
           require: ['babel-core/register', './spec/spec_helper.es6']
         src: ['spec/**/*.es6']
-    sass:
-      compile:
-        expand: true
-        cwd: 'assets/styles'
-        src: ['**/*.sass', '**/*.scss']
-        dest: 'app/styles'
-        ext: ".css"
-        options:
-          loadPath: require('node-neat').includePaths
 
-  grunt.registerTask 'build',   ['sass']
-  grunt.registerTask 'test',    ['mochaTest']
-  grunt.registerTask 'default', ['test', 'build']
+  grunt.registerTask 'test', ['mochaTest']
+  grunt.registerTask 'default', ['test']

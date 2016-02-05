@@ -1,3 +1,5 @@
+require('application.sass')
+
 import React from 'react'
 
 // In order to furnish the hot loader with the logic it needs to swap out
