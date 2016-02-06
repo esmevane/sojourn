@@ -33,7 +33,7 @@ $beige: #fbf3e2
 $base-transition: all 0.3s ease
 
 // Font Colors
-$base-background-color: $beige
+$base-background-color: white
 $base-font-color: $dark-gray
 $accent-color: $pomegranate
 $headline-color: $eggplant
@@ -42,8 +42,8 @@ $action-color: $ruby-pulp
 
 // Border
 $base-border-color: transparentize($accent-color, 0.4)
-$base-border: 1px dotted $base-border-color
-$heavy-border: 3px dotted $base-border-color
+$base-border: 1px solid transparentize($base-border-color, 0.3)
+$heavy-border: 3px solid transparentize($base-border-color, 0.3)
 
 // Forms
 $base-form-background: transparentize(lighten($base-background-color, 10%), 0.3)

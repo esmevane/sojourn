@@ -6,70 +6,64 @@
   <body>
     <header class='intro-splash'>
       <h1 class='headline'>Sojourn</h1>
-      <h2 class='byline'>Highly disposable front-end boilerplate.</h2>
+      <h2 class='byline'>A premade dev environment for JS apps.</h2>
     </header>
     <main>
       <section>
-        <h3>
-          When you don't want to spend all day <em>getting ready to start</em>
-        </h3>
         <p>
-          The next time you launch a front-end heavy project, do yourself a
-          favor and get the minor decisions out of the way.  Think about your
-          brilliant idea, not the tools you're going to use to deliver it.
+          Sojourn is a webpack toolchain which embraces a handful of tools, prebuilt to give you a quick way to jump into creating fantastic React-based software.
         </p>
         <p>
-          Deliberately <em>not a framework</em>, Sojourn is just a curated,
-          preconfigured assembly of pieces into a healthy toolchain.  Clone it,
-          zap its git history, start a new project that's all yours and hit
-          the ground running!
+          Clone it, annihilate its git history, and live code your way to ideation.
         </p>
       </section>
       <section>
-        <aside>Script</aside>
+        <aside>Modern tooling</aside>
         <article>
-          Sojourn is bundled with a toolchain that embraces testing and modular
-          code composition.  When you're done, "grunt build" to compile
-          everything into a single exportable file (minified version included).
+          Sojourn is a preconfigured webpack-based build system that mixes ES6, React, and Sass support together along with a joyful development experience.
         </article>
       </section>
       <section>
-        <aside>Visualize</aside>
+        <aside>Live code it</aside>
         <article>
-          Embark on a wondrous prototyping experience without needing to take
-          the time to install any number of visual tools.  Sojourn comes
-          pre-bundled with Sass, Bourbon + Neat, and Font Awesome.  Add any new
-          imagery or fonts with ease in the app/images and app/fonts
-          directories.
+          Sojourn is designed to be a relaxing design experience.  It provides you with a development environment which keeps your React components and CSS hot-loaded in the browser.  You shouldn't need to spam refresh all the time and rebuild app state to build effectively.
         </article>
       </section>
       <section>
-        <aside>The menu</aside>
+        <aside>Build with</aside>
         <article>
           <ul>
-            <li>Grunt</li>
-            <li>CoffeeScript</li>
-            <li>Backbone</li>
-            <li>React</li>
-            <li>jQuery</li>
-            <li>Underscore</li>
-            <li>Mocha</li>
-            <li>Expect</li>
-            <li>Browserify</li>
-            <li>Uglify</li>
-            <li>Sass</li>
-            <li>Bourbon</li>
-            <li>Neat</li>
-            <li>Font Awesome</li>
+            <li>
+              <strong>Live coding:</strong>
+              All CSS and React component changes hot-load in your browser, so you can live code with minimal refreshing.
+            <li>
+              <strong>Babel:</strong>
+              Use the cutting edge of Javascript with no hassle
+            </li>
+            <li>
+              <strong>React:</strong> Declare fast and stateless interfaces
+            </li>
+            <li><strong>Sass:</strong> CSS as it ought to be</li>
+            <li>
+              <strong>Bourbon &amp; Neat:</strong>
+              Sensible defaults to get you styling fast
+            </li>
           </ul>
-          <p>
-            It's a la carte.  Because of the way the build system is laid out,
-            you can use or not use anything except Grunt itself.  It still gets
-            collated and made ready for production.  Don't like CoffeeScript?  I
-            guess we can still be friends.  Your Javascript will compile just
-            fine.  Same with Backbone, React, jQuery, etc.  Don't require it,
-            and it just won't be there.
-          </p>
+        </article>
+      </section>
+      <section>
+        <aside>Test with</aside>
+        <article>
+          <ul>
+            <li>
+              <strong>Mocha &amp; Chai:</strong>
+              A highly flexible testing interface so you can test just like you want.  Although it starts with a describe/it/expect syntax, and a spec style suite runner, both tools are versatile and simple to configure.
+            </li>
+            <li>
+              <strong>Persistent specs with notifications:</strong>
+              Keep your attention on your code and let your tests notify you when something goes wrong.  Tests can be started and then backgrounded, and notifications will update you from time to time.
+            </li>
+          </ul>
         </article>
       </section>
       <section>
@@ -80,15 +74,29 @@
             <li class='code'>cd sojourn</li>
             <li class='code'>npm install</li>
             <li class='code'>rm -rf .git</li>
-            <li class='code'>npm install -g grunt-cli</li>
-            <li class='code'>grunt serve</li>
+            <li class='code'>npm run dev</li>
           </ul>
           <p>
-            Sojourn will observe changes to any CoffeeScript or JavaScript file
-            in assets/scripts/**, or any Sass file in assets/styles/**.  When
-            any of those files change, it will bootstrap a new copy of the
-            application files and a simple refresh will show you your work.
+            This fires up the dev server, running by default on <span class='code'>localhost:9001</span>.  Styling boilerplate is already there.  Any changes you make to the code in the <span class='code'>assets</span> folder will persist while the dev server is running, and compile to <span class='code'>app/assets</span>.
           </p>
+          <p>
+            Want to get your app ready for prime time?  Just do this:
+          </p>
+          <ul>
+            <li class='code'>npm run build</li>
+          </ul>
+          <p>
+            Want to run the test suite?  That's easy:
+          </p>
+          <ul>
+            <li class='code'>npm test</li>
+          </ul>
+          <p>
+            Want to keep the test suite running in the background, and rerun the suite every time you update it?  That's easy, too:
+          </p>
+          <ul>
+            <li class='code'>npm run tdd</li>
+          </ul>
         </article>
       </section>
       <section class='links'>
