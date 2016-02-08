@@ -3,6 +3,7 @@ import { render }   from 'react-dom'
 import { Provider } from 'react-redux'
 import App          from './App.es6'
 import store        from './store'
+import { DevTools } from './containers'
 
 // This is the entrypoint for all of the application building logic declared in
 // the webpack layer.  This file should be responsible for nothing more than
@@ -17,7 +18,10 @@ import store        from './store'
 let element = document.getElementById('demo')
 let content = (
   <Provider store={ store }>
-    <App />
+    <div>
+      <App />
+      <DevTools />
+    </div>
   </Provider>
 )
 
