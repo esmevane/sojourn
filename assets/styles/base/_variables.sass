@@ -17,28 +17,25 @@ $small-spacing: $base-spacing / 2
 $base-z-index: 0
 
 // Colors
-$blue: #477dca
-$dark-gray: #333333
-$medium-gray: #999999
-$light-gray: #dddddd
-
-$plum: #363142
-$eggplant: #553D51
-$pomegranate: #78475A
-$rose: #99535D
-$ruby-pulp: #B5635A
-$beige: #fbf3e2
+/* coolors.co/97f9f9-a4def9-c1e0f7-cfbae1-c59fc9 */
+$color1: #97f9f9
+$color2: #a4def9
+$color3: #c1e0f7
+$color4: #cfbae1
+$color5: #c59fc9
 
 // Animations
 $base-transition: all 0.3s ease
 
 // Font Colors
-$base-background-color: white
-$base-font-color: $dark-gray
-$accent-color: $pomegranate
-$headline-color: $eggplant
-$byline-color: $plum
-$action-color: $ruby-pulp
+$base-white: rgba(250, 250, 250, 1)
+$base-black: darken($color5, 50%)
+$base-background-color: $base-white
+$base-font-color: $base-black
+$accent-color: darken($color2, 20%)
+$headline-color: darken($color3, 20%)
+$byline-color: darken($color4, 60%)
+$action-color: darken($color5, 20%)
 
 // Border
 $base-border-color: transparentize($accent-color, 0.4)

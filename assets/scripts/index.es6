@@ -1,6 +1,8 @@
-import React      from 'react'
-import { render } from 'react-dom'
-import App        from './App.es6'
+import React        from 'react'
+import { render }   from 'react-dom'
+import { Provider } from 'react-redux'
+import App          from './App.es6'
+import store        from './store'
 
 // This is the entrypoint for all of the application building logic declared in
 // the webpack layer.  This file should be responsible for nothing more than
@@ -12,7 +14,11 @@ import App        from './App.es6'
 // a manual refresh (though the work will be done almost instantly).  Normal
 // React components imported by this file will load as expected.
 //
-let element = document.getElementById('react-load-state')
-let content = <div><App /></div>
+let element = document.getElementById('demo')
+let content = (
+  <Provider store={ store }>
+    <App />
+  </Provider>
+)
 
 render(content, element)
