@@ -6,7 +6,8 @@ function title(body) {
     let div = document.createElement('div')
 
     div.innerHTML = marked(body)
-    return `${div.innerText.slice(0, 20)}...`
+    let text = div.innerText || ""
+    return `${text.slice(0, 20)}...`
   } else {
     return `${body.slice(0, 20)}...`
   }
