@@ -29,6 +29,7 @@ export function createNote(body) {
 let firstNote = createNote(startText)
 
 export const InitialState = {
+  navigate: { route: "" },
   notes: {
     active:   [firstNote.meta.id],
     contents: [firstNote],
