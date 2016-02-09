@@ -1,11 +1,11 @@
 import DevTools from './DevTools'
-import WorkingNoteList from './WorkingNoteList'
 import WorkingNoteEditor from './WorkingNoteEditor'
+import WorkingNoteList from './WorkingNoteList'
 import WorkingNotePreview from './WorkingNotePreview'
 
 export {
   DevTools,
-  WorkingNoteList,
   WorkingNoteEditor,
+  WorkingNoteList,
   WorkingNotePreview
 }

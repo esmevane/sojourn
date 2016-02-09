@@ -1,7 +1,7 @@
-import React        from 'react'
+import React from 'react'
 import * as Actions from '../actions'
-import { connect }  from 'react-redux'
-import { NoteList } from '../components'
+import { connect } from 'react-redux'
+import NoteList from '../components/NoteList'
 
 function mapStateToProps(state) {
   let activeNotes = state.notes.contents.filter(note => !note.meta.archived)

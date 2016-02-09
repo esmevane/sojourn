@@ -1,7 +1,7 @@
-import React           from 'react'
-import marked          from 'marked'
-import { connect }     from 'react-redux'
-import { NotePreview } from '../components'
+import React from 'react'
+import marked from 'marked'
+import { connect } from 'react-redux'
+import NotePreview from '../components/NotePreview'
 
 function mapStateToProps(state) {
   let [ id ]   = state.notes.active
