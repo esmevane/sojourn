@@ -1,7 +1,7 @@
 require('application.sass')
 
-import React           from 'react'
-import { Splash }      from './components'
+import React from 'react'
+import { Splash, Styleguide } from './components'
 import * as Containers from './containers'
 
 // In order to furnish the hot loader with the logic it needs to swap out
@@ -18,6 +18,7 @@ export default class App extends React.Component {
           <Containers.WorkingNoteEditor />
           <Containers.WorkingNotePreview />
         </section>
+        <Styleguide />
       </Splash>
     )
   }
