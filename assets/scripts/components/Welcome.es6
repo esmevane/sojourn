@@ -4,7 +4,9 @@ import { Splash, Menu } from '../components'
 const Welcome = () => (
   <Splash>
     <Menu />
-    <h1>Welcome to Sojourn!</h1>
+    <section className='welcome'>
+      <h1>Get started by checking out the demo, or the styleguide.</h1>
+    </section>
   </Splash>
 )
 

@@ -103,17 +103,17 @@ const Styleguide = () => (
         </p>
 
         <p>
-          <label for="text_field">Text Field:</label>
+          <label htmlFor="text_field">Text Field:</label>
           <input type="text" id="text_field" />
         </p>
 
         <p>
-          <label for="text_area">Text Area:</label>
+          <label htmlFor="text_area">Text Area:</label>
           <textarea id="text_area"></textarea>
         </p>
 
         <p>
-          <label for="select_element">Select Element:</label>
+          <label htmlFor="select_element">Select Element:</label>
           <select name="select_element">
             <optgroup label="Option Group 1">
               <option value="1">Option 1</option>
@@ -129,11 +129,11 @@ const Styleguide = () => (
         </p>
 
         <p>
-          <label for="radio_buttons">Radio Buttons:</label>
+          <label htmlFor="radio_buttons">Radio Buttons:</label>
           <label>
             <input
               type="radio"
-              class="radio"
+              className="radio"
               name="radio_button"
               value="radio_1" />
             Radio 1
@@ -141,7 +141,7 @@ const Styleguide = () => (
           <label>
             <input
               type="radio"
-              class="radio"
+              className="radio"
               name="radio_button"
               value="radio_2" />
             Radio 2
@@ -149,7 +149,7 @@ const Styleguide = () => (
           <label>
             <input
               type="radio"
-              class="radio"
+              className="radio"
               name="radio_button"
               value="radio_3" />
             Radio 3
@@ -157,11 +157,11 @@ const Styleguide = () => (
         </p>
 
         <p>
-          <label for="checkboxes">Checkboxes:</label>
+          <label htmlFor="checkboxes">Checkboxes:</label>
           <label>
             <input
               type="checkbox"
-              class="checkbox"
+              className="checkbox"
               name="checkboxes"
               value="check_1" />
             Checkbox 1
@@ -169,7 +169,7 @@ const Styleguide = () => (
           <label>
             <input
               type="checkbox"
-              class="checkbox"
+              className="checkbox"
               name="checkboxes"
               value="check_2" />
             Checkbox 2
@@ -177,7 +177,7 @@ const Styleguide = () => (
           <label>
             <input
               type="checkbox"
-              class="checkbox"
+              className="checkbox"
               name="checkboxes"
               value="check_3" />
             Checkbox 3
@@ -185,13 +185,13 @@ const Styleguide = () => (
         </p>
 
         <p>
-          <label for="password">Password:</label>
-          <input type="password" class="password" name="password" />
+          <label htmlFor="password">Password:</label>
+          <input type="password" className="password" name="password" />
         </p>
 
         <p>
-          <label for="file">File Input:</label>
-          <input type="file" class="file" name="file" />
+          <label htmlFor="file">File Input:</label>
+          <input type="file" className="file" name="file" />
         </p>
 
 
@@ -205,7 +205,7 @@ const Styleguide = () => (
 
     <h1 id="tables">Tables</h1>
 
-    <table cellspacing="0" cellpadding="0">
+    <table cellSpacing="0" cellPadding="0">
       <thead>
         <tr>
           <th>Table Header 1</th>
@@ -217,7 +217,7 @@ const Styleguide = () => (
         <tr>
           <td>Division 1</td><td>Division 2</td><td>Division 3</td>
         </tr>
-        <tr class="even">
+        <tr className="even">
           <td>Division 1</td><td>Division 2</td><td>Division 3</td>
         </tr>
         <tr>
