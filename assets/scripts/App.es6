@@ -2,7 +2,7 @@ require('application.sass')
 
 import React from 'react'
 import { Router, Route, browserHistory } from 'react-router'
-import { Demo, Welcome, Styleguide, NotFound } from './components'
+import { Demo, Welcome, Styleguide, NotFound } from './pages'
 
 // In order to furnish the hot loader with the logic it needs to swap out
 // components when their presentation or logic changes, you need to use this
