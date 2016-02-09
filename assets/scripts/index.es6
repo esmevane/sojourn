@@ -1,9 +1,8 @@
-import React        from 'react'
-import { render }   from 'react-dom'
+import React from 'react'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import App          from './App.es6'
-import store        from './store'
-import { DevTools } from './containers'
+import App from './App.es6'
+import store from './store'
 
 // This is the entrypoint for all of the application building logic declared in
 // the webpack layer.  This file should be responsible for nothing more than
@@ -20,7 +19,6 @@ let content = (
   <Provider store={ store }>
     <div>
       <App />
-      <DevTools />
     </div>
   </Provider>
 )
