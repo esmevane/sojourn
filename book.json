@@ -1,0 +1,20 @@
+{
+  "gitbook": "2.x.x",
+  "title": "Using Sojourn",
+  "description": "Quick prototyping with preconfigured libraries",
+  "language": "en",
+  "styles": {
+    "website": "docs/styles/book.sass"
+  },
+  "plugins": ["edit-link", "prism", "-highlight", "github", "styles-sass"],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/esmevane/sojourn/tree/master",
+      "label": "Edit This Page"
+    },
+    "github": {
+      "url": "https://github.com/esmevane/sojourn"
+
+    }
+  }
+}
