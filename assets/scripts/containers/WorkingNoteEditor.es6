@@ -1,6 +1,6 @@
-import React          from 'react'
-import { connect }    from 'react-redux'
-import { NoteEditor } from '../components'
+import React from 'react'
+import { connect } from 'react-redux'
+import NoteEditor from '../components/NoteEditor'
 import { updateNote } from '../actions'
 
 function mapStateToProps(state) {

@@ -26,13 +26,6 @@ app.get('/favicon.ico', function(request, response) {
   response.sendFile(path);
 });
 
-app.get('/:file', function(request, response, next) {
-  var htmlFile = "" + request.params.file + ".html";
-  var path     = [__dirname, 'app', htmlFile].join("/");
-
-  response.sendFile(path);
-});
-
 app.get('*', function(request, response, next) {
   var path = [__dirname, 'app', 'index.html'].join("/");
 
