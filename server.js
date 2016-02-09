@@ -20,6 +20,12 @@ app.use('/api', JsonServer.router(JsonDB.ApiDb));
 
 app.use('/assets', proxy(url.parse(scripts)));
 
+app.get('/favicon.ico', function(request, response) {
+  var path = [__dirname, 'app', 'images', 'favicon.ico'].join("/");
+
+  response.sendFile(path);
+});
+
 app.get('/:file', function(request, response, next) {
   var htmlFile = "" + request.params.file + ".html";
   var path     = [__dirname, 'app', htmlFile].join("/");
