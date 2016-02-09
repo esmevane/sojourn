@@ -1,18 +1,28 @@
 import Immutable from 'immutable'
-import { EditorApp } from '../../assets/scripts/reducers'
+import { NoteApp } from '../../assets/scripts/reducers'
 import * as Actions from '../../assets/scripts/actions'
 
 describe("Reducers", () => {
-  describe("EditorApp", () => {
-    it("exists", () => { expect(EditorApp).to.be.ok })
+  describe("NoteApp", () => {
+    it("exists", () => { expect(NoteApp).to.be.ok })
 
     it("gives a default state", () => {
-      expect(EditorApp(undefined, "action:string")).to.be.an.object
+      expect(NoteApp(undefined, "action:string")).to.be.an.object
+    })
+
+    describe("navigation", () => {
+      let nextPath = "/the/next/path"
+      let action = Actions.navigate(nextPath)
+      let state = NoteApp(undefined, action)
+
+      it("changes the path", () => {
+        expect(state.navigate.route).to.eql(nextPath)
+      })
     })
 
     describe("filtering notes", () => {
       let action   = Actions.setNoteFilters(Actions.NoteFilters.ShowUnarchived)
-      let newState = EditorApp(undefined, action)
+      let newState = NoteApp(undefined, action)
 
       it("returns a filtered state", () => {
         expect(newState.notes.filter).to.eql(Actions.NoteFilters.ShowUnarchived)
@@ -22,7 +32,7 @@ describe("Reducers", () => {
     describe("adding notes", () => {
       let noteText = "# Markdown markdown markdown"
       let action   = Actions.addNote(noteText)
-      let newState = EditorApp(undefined, action)
+      let newState = NoteApp(undefined, action)
       let newNote  = Immutable.fromJS(newState.notes.contents).get(-1).toJS()
 
       it("has a new note", () => {
@@ -49,10 +59,10 @@ describe("Reducers", () => {
     describe("archiving notes", () => {
       let noteText  = "# Markdown markdown markdown"
       let addNote   = Actions.addNote(noteText)
-      let state     = EditorApp(undefined, addNote)
+      let state     = NoteApp(undefined, addNote)
       let firstNote = Immutable.fromJS(state.notes.contents).get(-1).toJS()
       let action    = Actions.archiveNote(firstNote.meta.id)
-      let newState  = EditorApp(state, action)
+      let newState  = NoteApp(state, action)
       let newNote   = Immutable.fromJS(newState.notes.contents).get(-1).toJS()
 
       it("has the same number of notes", () => {
@@ -81,11 +91,11 @@ describe("Reducers", () => {
     describe("updating notes", () => {
       let noteText  = "# Markdown markdown markdown"
       let addNote   = Actions.addNote(noteText)
-      let state     = EditorApp(undefined, addNote)
+      let state     = NoteApp(undefined, addNote)
       let firstNote = Immutable.fromJS(state.notes.contents).get(-1).toJS()
       let newBody   = "# New body"
       let action    = Actions.updateNote(firstNote.meta.id, newBody)
-      let newState  = EditorApp(state, action)
+      let newState  = NoteApp(state, action)
       let newNote   = Immutable.fromJS(newState.notes.contents).get(-1).toJS()
 
       it("has the same number of notes", () => {
@@ -110,10 +120,10 @@ describe("Reducers", () => {
     describe("activating notes", () => {
       let noteText    = "# Markdown markdown markdown"
       let addNote     = Actions.addNote(noteText)
-      let state       = EditorApp(undefined, addNote)
+      let state       = NoteApp(undefined, addNote)
       let firstNote   = Immutable.fromJS(state.notes.contents).get(-1).toJS()
       let action      = Actions.activateNote(firstNote.meta.id)
-      let secondState = EditorApp(state, action)
+      let secondState = NoteApp(state, action)
 
       it("stores the note id in the active field", () => {
         expect(secondState.notes.active).to.include(firstNote.meta.id)

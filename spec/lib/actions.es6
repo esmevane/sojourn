@@ -10,6 +10,24 @@ describe("Actions", () => {
   it("defines ActivateNote", () => { expect(Actions.ActivateNote).to.be.ok })
   it("defines NoteFilters", () => { expect(Actions.NoteFilters).to.be.ok })
   it("defines UpdateNote", () => { expect(Actions.UpdateNote).to.be.ok })
+  it("defines Navigate", () => { expect(Actions.Navigate).to.be.ok })
+
+  describe("navigate", () => {
+    let { navigate, Navigate } = Actions
+    let newRoute = "/a/path/to/navigate/to"
+
+    it("creates a Navigate action", () => {
+      var { type } = navigate(newRoute)
+
+      expect(type).to.eql(Navigate)
+    })
+
+    it("passes the given route", () => {
+      let { route } = navigate(newRoute)
+
+      expect(route).to.eql(newRoute)
+    })
+  })
 
   describe("NoteFilters", () => {
     let { NoteFilters } = Actions

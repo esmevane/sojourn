@@ -4,6 +4,7 @@ export const ActivateNote = "notes:change:activate"
 export const FilterNotes  = "notes:change:filter"
 export const UpdateNote   = "notes:change:update"
 export const GetNote      = "notes:get:id"
+export const Navigate     = "navigate"
 
 const ShowAll        = "notes:filter:all"
 const ShowArchived   = "notes:filter:archived"
@@ -29,6 +30,11 @@ export function archiveNote(id) {
 export function getNote(id) {
   let type = GetNote
   return { type, id }
+}
+
+export function navigate(route) {
+  let type = Navigate
+  return { type, route }
 }
 
 export function setNoteFilters(filter) {

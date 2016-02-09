@@ -1,9 +1,7 @@
-import Immutable    from 'immutable'
-import * as Actions from '../actions'
-import * as Schema  from '../schema'
-import * as Redux   from 'redux'
-import notes        from './notes'
+import { combineReducers } from 'redux'
+import notes from './notes'
+import navigate from './navigate'
 
-let reducers = { notes }
+let reducers = { notes, navigate }
 
-export const EditorApp = Redux.combineReducers(reducers)
+export const NoteApp = combineReducers(reducers)

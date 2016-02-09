@@ -4,10 +4,12 @@ import {
   createStore
 } from 'redux'
 
-import thunk         from 'redux-thunk'
-import { DevTools }  from '../containers'
-import { EditorApp } from '../reducers'
-import startState    from '../schema'
+import thunk from 'redux-thunk'
+import { browserHistory } from 'react-router'
+import { DevTools } from '../containers'
+import { NoteApp } from '../reducers'
+import startState from '../schema'
+import { navigate } from '../actions'
 
 let instrument
 let windowPresent   = typeof window === 'object'
@@ -24,6 +26,8 @@ if (windowPresent && devToolsPresent) {
 }
 
 const enhancer = compose(applyMiddleware(thunk), instrument)
-const store    = createStore(EditorApp, startState, enhancer)
+const store    = createStore(NoteApp, startState, enhancer)
+
+browserHistory.listen(location => store.dispatch(navigate(location)))
 
 export default store
