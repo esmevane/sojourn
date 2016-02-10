@@ -1,5 +1,4 @@
 import React from 'react'
-import { Splash, Menu } from '../components'
 
 import {
   WorkingNoteEditor,
@@ -8,14 +7,11 @@ import {
 } from '../containers'
 
 const Demo = () => (
-  <Splash>
-    <Menu />
-    <section className='notes'>
-      <WorkingNoteList />
-      <WorkingNoteEditor />
-      <WorkingNotePreview />
-    </section>
-  </Splash>
+  <section className='notes'>
+    <WorkingNoteList />
+    <WorkingNoteEditor />
+    <WorkingNotePreview />
+  </section>
 )
 
 export default Demo
