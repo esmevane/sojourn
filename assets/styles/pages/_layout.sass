@@ -13,26 +13,15 @@ footer
     &:visited
       color: darken(transparentize($accent-color, 0.5), 20%)
 
-header
-  border-bottom: $base-border
-  padding-bottom: $base-font-size
-  text-align: center
-
 section
-  @include outer-container
   margin: $base-font-size 0
   padding: $base-font-size
 
   aside
-    @include span-columns(3)
-    border-top: $heavy-border
     padding-left: $base-font-size
     font-size: $base-font-size * 1.5
     line-height: $base-font-size * 3
     color: transparentize($action-color, 0.3)
-
-  article
-    @include span-columns(9)
 
 ul, ol
   text-align: left

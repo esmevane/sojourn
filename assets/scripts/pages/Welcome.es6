@@ -1,13 +1,15 @@
 import React from 'react'
-import { Splash, Menu } from '../components'
+import { Link } from 'react-router'
+import { Splash } from '../components'
 
 const Welcome = () => (
   <Splash>
-    <Menu />
     <section className='welcome'>
       <h1>
-        Get started by checking out the demo, the styleguide,
-        or <a href='http://esmevane.github.io/sojourn'>the manual</a>.
+        Get started by checking out <Link to='notepad'>the notepad demo</Link>
+        , <Link to='styleguide'>the styleguide examples</Link>
+        , <Link to='d3-demo'>the D3 integration demo</Link>
+        , or <a href='http://esmevane.github.io/sojourn'>the manual</a>.
       </h1>
     </section>
   </Splash>

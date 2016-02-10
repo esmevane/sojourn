@@ -1,9 +1,7 @@
 import React from 'react'
-import { Splash, Menu } from '../components'
 
 const Styleguide = () => (
-  <Splash>
-    <Menu />
+  <section>
     <h1 id="main">The base styles</h1>
 
     <p>
@@ -225,7 +223,7 @@ const Styleguide = () => (
         </tr>
       </tbody>
     </table>
-  </Splash>
+  </section>
 )
 
 export default Styleguide
