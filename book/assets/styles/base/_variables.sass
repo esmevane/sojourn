@@ -1,0 +1,49 @@
+// Typography
+$base-font-family: 'Helvetica', sans-serif
+$heading-font-family: $base-font-family
+
+// Font Sizes
+$base-font-size: 1em
+
+// Line height
+$base-line-height: 1.5
+$heading-line-height: 1.2
+
+// Other Sizes
+$base-font-weight: lighter
+$base-border-radius: 3px
+$base-spacing: $base-line-height * 1em
+$small-spacing: $base-spacing / 2
+$base-z-index: 0
+
+// Colors
+/* coolors.co/97f9f9-a4def9-c1e0f7-cfbae1-c59fc9 */
+$color1: #97f9f9
+$color2: #a4def9
+$color3: #c1e0f7
+$color4: #cfbae1
+$color5: #c59fc9
+
+// Animations
+$base-transition: all 0.3s ease
+
+// Font Colors
+$base-white: rgba(250, 250, 250, 1)
+$base-black: darken($color5, 50%)
+$base-background-color: $base-white
+$base-font-color: $base-black
+$accent-color: darken($color2, 20%)
+$headline-color: darken($color3, 20%)
+$byline-color: darken($color4, 60%)
+$action-color: darken($color5, 20%)
+
+// Border
+$base-border-color: transparentize($accent-color, 0.4)
+$base-border: 1px solid transparentize($base-border-color, 0.3)
+$heavy-border: 3px solid transparentize($base-border-color, 0.3)
+
+// Forms
+$base-form-background: transparentize(lighten($base-background-color, 10%), 0.3)
+$form-focus-color: adjust-color($action-color, $lightness: -5%, $alpha: -0.3)
+$form-box-shadow: inset 0 1px 3px rgba(black, 0.06)
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px $form-focus-color

@@ -1,0 +1,505 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Actions &amp; Action Creators | Using Sojourn</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-prism/prism.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="../website-1455290311663.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../docs/components.html" />
+    
+    
+    <link rel="prev" href="../docs/the-script-pipeline.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="3.2.1"
+        data-chapter-title="Actions &amp; Action Creators"
+        data-filepath="docs/actions.md"
+        data-basepath=".."
+        data-revision="Fri Feb 12 2016 09:18:31 GMT-0600 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        README
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="docs/pitch.html">
+            
+                
+                    <a href="../docs/pitch.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        The Pitch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="docs/installation.html">
+            
+                
+                    <a href="../docs/installation.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Installation
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="docs/overview.html">
+            
+                
+                    <a href="../docs/overview.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Overview
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="docs/the-style-pipeline.html">
+            
+                
+                    <a href="../docs/the-style-pipeline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        The Style Pipeline
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/the-script-pipeline.html">
+            
+                
+                    <a href="../docs/the-script-pipeline.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        The Script Pipeline
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.2.1" data-path="docs/actions.html">
+            
+                
+                    <a href="../docs/actions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.1.</b>
+                        
+                        Actions &amp; Action Creators
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.2" data-path="docs/components.html">
+            
+                
+                    <a href="../docs/components.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.2.</b>
+                        
+                        Components
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.3" data-path="docs/containers.html">
+            
+                
+                    <a href="../docs/containers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.3.</b>
+                        
+                        Containers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.4" data-path="docs/elements.html">
+            
+                
+                    <a href="../docs/elements.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.4.</b>
+                        
+                        Elements
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.5" data-path="docs/reducers.html">
+            
+            <span><b>3.2.5.</b> Reducers</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.6" data-path="docs/sagas.html">
+            
+            <span><b>3.2.6.</b> Sagas</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.7" data-path="docs/schema.html">
+            
+            <span><b>3.2.7.</b> Schema</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.8" data-path="docs/store.html">
+            
+            <span><b>3.2.8.</b> Store</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="docs/testing.html">
+            
+                
+                    <a href="../docs/testing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Testing &amp; TDD
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="docs/integrations.html">
+            
+            <span><b>4.</b> Integrations</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docs/standalone.html">
+            
+            <span><b>4.1.</b> Standalone</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docs/standalone-production.html">
+            
+            <span><b>4.2.</b> Production environment</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docs/integration-rails.html">
+            
+            <span><b>4.3.</b> Integrating with Rails</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="docs/usage.html">
+            
+            <span><b>5.</b> Usage</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docs/hot-loading.html">
+            
+            <span><b>5.1.</b> Hot-loading</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="docs/using-devtools.html">
+            
+            <span><b>5.2.</b> Using DevTools</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docs/build-systems.html">
+            
+            <span><b>5.3.</b> Build systems</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="docs/troubleshooting.html">
+            
+            <span><b>6.</b> Troubleshooting</span>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="GLOSSARY.html">
+            
+                
+                    <a href="../GLOSSARY.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        Glossary
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+    <a href="../GLOSSARY.html" class="btn pull-left" aria-label="Glossary"><i class="fa fa-sort-alpha-asc"></i></a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Using Sojourn</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="actions--action-creators">Actions &amp; <a href="../GLOSSARY.html#action" class="glossary-term" title="...">Action</a> Creators</h1>
+<p>Actions and <a href="../GLOSSARY.html#action" class="glossary-term" title="...">action</a> creators, thanks to Redux, are just about the simplest part of any Sojourn project.</p>
+<h2 id="actions">Actions:</h2>
+<pre><code class="lang-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> AnActionName <span class="token operator">=</span> <span class="token string">&quot;an:<a href="../GLOSSARY.html#action" class="glossary-term" title="...">action</a>:string&quot;</span>
+</code></pre>
+<p>That&apos;s all.</p>
+<p>Actions are, basically, constants which hold strings - that&apos;s all they are.  They&apos;re there to provide you, and the next developer, a single point of reference and change, which wraps a primitive in a code snippet.</p>
+<p>Why wrap a perfectly harmless string in a constant?  Two really good (and inexpensive to make) architectural bits of advice spring to mind.</p>
+<blockquote>
+<p>Never use a primitive when an object can be used.</p>
+<p>Always prefer code barewords over internally bootstrapped state.</p>
+</blockquote>
+<p>By inexpensive, we mean that the benefits far outweigh the ceremony of the architectural choice.</p>
+<p>Just in case the benefits of doing this are kind of non-obvious, here they are in plain language:</p>
+<ul>
+<li>When you have a primitive in several places, any change needs to be made in all of those places.</li>
+<li>When you have a bareword in a file, you have to explicitly import that bareword from that file.</li>
+<li>Any imported bareword now has an <em>obvious, explicit link to a single point of truth in your application</em>.</li>
+<li>This makes it sickeningly simple for the next guy to intuit what you&apos;re trying to do in almost any given case.</li>
+</ul>
+<p>To recap, doing this:</p>
+<pre><code class="lang-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> AnActionName <span class="token punctuation">}</span> from <span class="token string">&apos;../actions&apos;</span>
+</code></pre>
+<p>Tells the next developer where your actions are, where changes should go, and what the <a href="../GLOSSARY.html#action" class="glossary-term" title="...">action</a> is.  All for a simple one-liner elsewhere in your application.</p>
+<h2 id="action-creators"><a href="../GLOSSARY.html#action" class="glossary-term" title="...">Action</a> creators</h2>
+<p><a href="../GLOSSARY.html#action" class="glossary-term" title="...">Action</a> creators are a little more complicated than actions, but not by much.  Here&apos;s an example <a href="../GLOSSARY.html#action_creator" class="glossary-term" title="...">action creator</a>:</p>
+<pre><code class="lang-javascript"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">anActionName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> type <span class="token operator">=</span> AnActionName
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> type <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>That&apos;s it.  That&apos;s actually all an <a href="../GLOSSARY.html#action_creator" class="glossary-term" title="...">action creator</a> ever should be - a simple process of getting the appropriate type, and returning it in an object which looks like this:</p>
+<pre><code class="lang-json"><span class="token punctuation">{</span> <span class="token string">&quot;type&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;an:<a href="../GLOSSARY.html#action" class="glossary-term" title="...">action</a>:name&quot;</span> <span class="token punctuation">}</span>
+</code></pre>
+<p>Some <a href="../GLOSSARY.html#action" class="glossary-term" title="...">action</a> creators ought to pass along bits of data.  Let&apos;s say you want to pass an object ID or something.  Just include it as an arbitrary extra key on the returned object.  As long as there&apos;s a <code>type</code> key, all&apos;s well.</p>
+<p>Here&apos;s an example:</p>
+<pre><code class="lang-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> AnActionNameWithId <span class="token operator">=</span> <span class="token string">&quot;an:<a href="../GLOSSARY.html#action" class="glossary-term" title="...">action</a>:name:with:id&quot;</span>
+<span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">anActionNameWithId</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> type <span class="token operator">=</span> AnActionNameWithId
+  <span class="token keyword">return</span> <span class="token punctuation">{</span> type<span class="token punctuation">,</span> id <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Again:  that&apos;s it!</p>
+<p>Something so simple inevitably raises a lot of questions.</p>
+<h4 id="why-are-the-two-types-separate">Why are the two types separate?</h4>
+<p>That&apos;s so that you can listen to type in your <a href="../GLOSSARY.html#reducers" class="glossary-term" title="...">reducers</a>.  More on those later.</p>
+<h4 id="why-does-the-string-look-like-that">Why does the string look like that?</h4>
+<p>Honestly?  Just personal preference.  Make them whatever you want so long as there&apos;s a single point of truth for the string.  The strings are almost never parsed.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../docs/the-script-pipeline.html" class="navigation navigation-prev " aria-label="Previous page: The Script Pipeline"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../docs/components.html" class="navigation navigation-next " aria-label="Next page: Components"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"edit-link":{"base":"https://github.com/esmevane/sojourn/tree/master","label":"Edit This Page"},"github":{"url":"https://github.com/esmevane/sojourn"},"prism":{},"styles-sass":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
