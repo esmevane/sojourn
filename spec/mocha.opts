@@ -1,0 +1,7 @@
+--colors
+--require babel-core/register
+--require spec/spec_helper.es6
+--growl
+--reporter spec
+--recursive
+spec/**/*.es6

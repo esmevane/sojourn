@@ -6,6 +6,7 @@ import NoteItem from './NoteItem'
 import NoteList from './NoteList'
 import NotePreview from './NotePreview'
 import PageChange from './PageChange'
+import Scatter from './Scatter'
 import Splash from './Splash'
 
 export {
@@ -17,5 +18,6 @@ export {
   NoteItem,
   NoteList,
   PageChange,
+  Scatter,
   Splash
 }
