@@ -32,7 +32,10 @@ module.exports = {
   entry:    [ path.join(__dirname, 'assets', 'scripts', 'index.es6') ],
   plugins:  [
     new webpack.optimize.UglifyJsPlugin({ sourceMap: false, mangle: true }),
-    new ExtractTextPlugin('application.css')
+    new ExtractTextPlugin('application.css'),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
   ],
   resolve: {
     extensions: ['', '.js', '.es6', '.sass', '.scss'],
@@ -41,7 +44,7 @@ module.exports = {
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   output: {
     path:     path.join(__dirname, 'app', 'assets'),
-    filename: 'application.min.js',
+    filename: 'application.js',
   },
   module: {
     loaders: [

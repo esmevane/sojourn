@@ -29,6 +29,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
+    "serve": "npm run build && node server.js",
     "dev": "node server.js",
     "tdd": "mocha --opts spec/mocha.opts --watch --watch-extensions es6",
     "test": "mocha --opts spec/mocha.opts"
