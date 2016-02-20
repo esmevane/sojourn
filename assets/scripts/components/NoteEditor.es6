@@ -3,18 +3,16 @@ import { findDOMNode } from 'react-dom'
 
 class NoteEditor extends React.Component {
   handleInput = (event) => {
-    return this.props.onNoteChange(this.props.noteId, event.target.innerText)
+    return this.props.onNoteChange(this.props.noteId, event.target.value)
   };
 
-  componentDidMount() { this.refs.editor.innerHTML = this.props.body }
-  componentDidUpdate() { this.refs.editor.innerHTML = this.props.body }
+  componentDidMount() { this.refs.editor.value = this.props.body }
+  componentDidUpdate() { this.refs.editor.value = this.props.body }
 
   render() {
     return(
       <div className='note-editor'>
-        <pre ref="editor"
-             contentEditable={ true }
-             onInput={ this.handleInput } />
+        <textarea ref="editor" onInput={ this.handleInput } />
       </div>
     )
   }
