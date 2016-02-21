@@ -1,45 +1,9 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import { connect } from 'react-redux'
 import { build } from '../composers'
 import { boundary } from '../composers/calculations'
 import { canvas } from '../composers/canvas'
 import { appear, animate, leave } from '../composers/circles'
-import { EventEmitter }  from 'events'
-import { range, sample } from 'underscore'
-
-var ScatterData = {
-  defaults: { domain: { low: -5, high: 25 }, dots: 100, seed: 20 },
-  delay: 2500
-}
-
-if (global) global.ScatterData = ScatterData
-
-class ScatterStore extends EventEmitter {
-  getState()          { return this.randomData() }
-  hasChanged()        { this.emit('chart:data:change') }
-  onChange(callback)  { this.on('chart:data:change', callback) }
-  offChange(callback) { this.removeListener('chart:data:change', callback) }
-
-  start() {
-    this.interval = setInterval(() => this.hasChanged(), ScatterData.delay)
-  }
-
-  randomData() {
-    let { domain: { low, high }, dots, seed } = ScatterData.defaults
-
-    let data   = []
-    let domain = { x: [low, high], y: [low, high], z: [low, high] }
-    let points = range(1, dots)
-    let seeds  = range(1, seed)
-
-    for (let point of points) {
-      let [ id, x, y, z ] = sample(seeds, 4)
-
-      data.push({ id, x, y, z })
-    }
-
-    return { domain, data }
-  }
-}
 
 class Canvas {
   constructor(element) {
@@ -100,32 +64,16 @@ class Canvas {
   }
 }
 
-export default class Scatter extends React.Component {
-  handleChange = () => {
-    let newState = this.store.getState()
-    this.setState(newState)
-  };
-
-  constructor(properties) {
-    super(properties)
-    this.store = new ScatterStore
-    this.state = this.store.getState()
-    this.store.start()
-  }
-
-  componentWillMount() { this.store.onChange(this.handleChange) }
-  componentWillUpdate() { this.chart.update(this.state) }
-  render() { return <section ref='container' /> }
-
+class Scatter extends React.Component {
   componentDidMount() {
     this.chart = new Canvas(this.refs.container)
-    this.chart.create(this.state)
+    this.chart.create(this.props)
   }
-
-  componentWillUnmount() {
-    this.store.offChange(this.handleChange)
-    this.chart.destroy(this.state)
-  }
+  componentWillUpdate() { this.chart.update(this.props) }
+  componentWillUnmount() { this.chart.destroy(this.props) }
+  render() { return <section ref='container' /> }
 }
 
-Scatter.propTypes = { domain: PropTypes.object, data: PropTypes.array }
+function mapStateToProps(state) { return state.chart.scatter }
+
+export default connect(mapStateToProps)(Scatter)

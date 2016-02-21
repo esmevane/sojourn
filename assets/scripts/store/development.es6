@@ -4,7 +4,8 @@ import {
   createStore
 } from 'redux'
 
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
+import sagas from '../sagas'
 import { browserHistory } from 'react-router'
 import { DevTools } from '../containers'
 import { NoteApp } from '../reducers'
@@ -25,8 +26,9 @@ if (windowPresent && devToolsPresent) {
   instrument = DevTools.instrument()
 }
 
-const enhancer = compose(applyMiddleware(thunk), instrument)
-const store    = createStore(NoteApp, startState, enhancer)
+const middleware = applyMiddleware(createSagaMiddleware(sagas))
+const enhancer   = compose(middleware, instrument)
+const store      = createStore(NoteApp, startState, enhancer)
 
 browserHistory.listen(location => store.dispatch(navigate(location)))
 

@@ -10,6 +10,16 @@ describe("Reducers", () => {
       expect(NoteApp(undefined, "action:string")).to.be.an.object
     })
 
+    describe("updating the chart", () => {
+      let state = NoteApp(undefined, "null:action")
+      let action = Actions.updateChart()
+      let nextState = NoteApp(state, action)
+
+      it("changes the scatter", () => {
+        expect(state.chart.scatter).not.to.eql(nextState.chart.scatter)
+      })
+    })
+
     describe("navigation", () => {
       let nextPath = "/the/next/path"
       let action = Actions.navigate(nextPath)

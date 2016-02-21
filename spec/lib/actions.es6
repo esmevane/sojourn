@@ -3,6 +3,8 @@ import * as Actions from '../../assets/scripts/actions'
 describe("Actions", () => {
   it("exists", () => { expect(Actions).to.be.ok })
 
+  it("defines UpdateChart", () => { expect(Actions.UpdateChart).to.be.ok })
+
   it("defines AddNote", () => { expect(Actions.AddNote).to.be.ok })
   it("defines GetNote", () => { expect(Actions.GetNote).to.be.ok })
   it("defines ArchiveNote", () => { expect(Actions.ArchiveNote).to.be.ok })
@@ -11,6 +13,16 @@ describe("Actions", () => {
   it("defines NoteFilters", () => { expect(Actions.NoteFilters).to.be.ok })
   it("defines UpdateNote", () => { expect(Actions.UpdateNote).to.be.ok })
   it("defines Navigate", () => { expect(Actions.Navigate).to.be.ok })
+
+  describe("updateChart", () => {
+    let { updateChart, UpdateChart } = Actions
+
+    it("creates an UpdateChart action", () => {
+      var { type } = updateChart()
+
+      expect(type).to.eql(UpdateChart)
+    })
+  })
 
   describe("navigate", () => {
     let { navigate, Navigate } = Actions

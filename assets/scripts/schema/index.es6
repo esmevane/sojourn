@@ -1,5 +1,30 @@
-import uuid            from 'uuid'
+import uuid from 'uuid'
 import { NoteFilters } from '../actions'
+import { range, sample } from 'underscore'
+
+const chart = {
+  defaults: { domain: { low: -5, high: 25 }, dots: 100, seed: 20 },
+  delay: 2500
+}
+
+export function randomizedScatter() {
+  let { domain: { low, high }, dots, seed } = chart.defaults
+
+  let data   = []
+  let domain = { x: [low, high], y: [low, high], z: [low, high] }
+  let points = range(1, dots)
+  let seeds  = range(1, seed)
+
+  for (let point of points) {
+    let [ id, x, y, z ] = sample(seeds, 4)
+
+    data.push({ id, x, y, z })
+  }
+
+  return { domain, data }
+}
+
+chart.scatter = randomizedScatter()
 
 const startText = `# Sojourn
 
@@ -29,6 +54,7 @@ export function createNote(body) {
 let firstNote = createNote(startText)
 
 export const InitialState = {
+  chart: chart,
   navigate: { route: "" },
   notes: {
     active:   [firstNote.meta.id],

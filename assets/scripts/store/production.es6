@@ -1,11 +1,13 @@
 import { applyMiddleware, createStore } from 'redux'
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
+import sagas from '../sagas'
 import { browserHistory } from 'react-router'
 import { NoteApp } from '../reducers'
 import startState from '../schema'
 import { navigate } from '../actions'
 
-const store = createStore(NoteApp, startState, applyMiddleware(thunk))
+const middleware = applyMiddleware(createSagaMiddleware(sagas))
+const store = createStore(NoteApp, startState, middleware)
 
 browserHistory.listen(location => store.dispatch(navigate(location)))
 

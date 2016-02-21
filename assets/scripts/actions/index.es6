@@ -5,6 +5,7 @@ export const FilterNotes  = "notes:change:filter"
 export const UpdateNote   = "notes:change:update"
 export const GetNote      = "notes:get:id"
 export const Navigate     = "navigate"
+export const UpdateChart  = "chart:data:change"
 
 const ShowAll        = "notes:filter:all"
 const ShowArchived   = "notes:filter:archived"
@@ -45,4 +46,9 @@ export function setNoteFilters(filter) {
 export function updateNote(id, body) {
   let type = UpdateNote
   return { type, id, body }
+}
+
+export function updateChart() {
+  let type = UpdateChart
+  return { type }
 }
