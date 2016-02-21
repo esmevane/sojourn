@@ -1,6 +1,6 @@
 import Immutable from 'immutable'
-import { NoteApp } from '../../assets/scripts/reducers'
-import * as Actions from '../../assets/scripts/actions'
+import { NoteApp } from '../../lib/scripts/reducers'
+import * as Actions from '../../lib/scripts/actions'
 
 describe("Reducers", () => {
   describe("NoteApp", () => {

@@ -1,3 +1,3 @@
-import { Footer } from '../../../assets/scripts/components'
+import { Footer } from '../../../lib/scripts/components'
 
 describe("Footer", () => { it("exists", () => { expect(Footer).to.be.ok }) })

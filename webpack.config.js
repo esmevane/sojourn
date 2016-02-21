@@ -26,7 +26,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:' + meta.port,
     'webpack/hot/only-dev-server',
-    path.join(__dirname, 'assets', 'scripts', 'index.es6')
+    path.join(__dirname, 'lib', 'scripts', 'index.es6')
   ],
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -34,7 +34,7 @@ module.exports = {
   ],
   resolve: {
     extensions: ['', '.js', '.es6', '.sass', '.scss'],
-    modulesDirectories: ['assets/scripts', 'assets/styles', 'node_modules']
+    modulesDirectories: ['lib/scripts', 'lib/styles', 'node_modules']
   },
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ],
   output: {
@@ -46,7 +46,7 @@ module.exports = {
     loaders: [
       {
         test:    /\.es6$/,
-        include: [ path.join(__dirname, 'assets', 'scripts') ],
+        include: [ path.join(__dirname, 'lib', 'scripts') ],
         loaders: [ 'react-hot', 'babel-loader' ],
       },
       { test: /\.(scss|sass)$/, loader: styleLoader }

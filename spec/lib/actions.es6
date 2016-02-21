@@ -1,4 +1,4 @@
-import * as Actions from '../../assets/scripts/actions'
+import * as Actions from '../../lib/scripts/actions'
 
 describe("Actions", () => {
   it("exists", () => { expect(Actions).to.be.ok })

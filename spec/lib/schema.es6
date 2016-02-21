@@ -1,4 +1,4 @@
-import * as Schema from '../../assets/scripts/schema'
+import * as Schema from '../../lib/scripts/schema'
 
 describe("The base schema", () => {
   it("has an InitialState", () => { expect(Schema.InitialState).to.be.ok })
