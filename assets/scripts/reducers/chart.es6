@@ -1,6 +1,14 @@
-import { UpdateChart } from '../actions'
+import Immutable from 'immutable'
 import { combineReducers } from 'redux'
+import { UpdateChart } from '../actions'
 import * as Schema from '../schema'
+
+function add(state = Schema.InitialState.chart.targets, action) {
+  let targets = Immutable.fromJS(state)
+  let newTarget = Schema.composeTarget(action.element)
+
+  return targets.push(newTarget).toJS()
+}
 
 function scatter(state = Schema.InitialState.chart.scatter, action) {
   switch (action.type) {
@@ -11,14 +19,17 @@ function scatter(state = Schema.InitialState.chart.scatter, action) {
   }
 }
 
-function defaults(state = Schema.InitialState.chart.defaults, action) {
-  return state
-}
-
 function delay(state = Schema.InitialState.chart.delay, action) {
   return state
 }
 
-const chart = combineReducers({ delay, defaults, scatter })
+function targets(state = Schema.InitialState.chart.targets, action) {
+  switch (action.type) {
+    default:
+      return state
+  }
+}
+
+const chart = combineReducers({ delay, scatter, targets })
 
 export default chart

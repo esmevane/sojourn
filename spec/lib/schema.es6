@@ -42,25 +42,6 @@ describe("The base schema", () => {
       describe("delay", () => {
         it("starts at 2500", () => { expect(chart.delay).to.eql(2500) })
       })
-
-      describe("defaults", () => {
-        let { defaults } = chart
-
-        describe("domain", () => {
-          it("starts with a low of -5 and high of 25", () => {
-            expect(defaults.domain).to.eql({ low: -5, high: 25 })
-          })
-        })
-
-        describe("dots", () => {
-          it("starts at 100", () => { expect(defaults.dots).to.eql(100) })
-        })
-
-        describe("seed", () => {
-          it("starts at 20", () => { expect(defaults.seed).to.eql(20) })
-        })
-
-      })
     })
 
     describe("the notes domain", () => {

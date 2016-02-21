@@ -14,3 +14,8 @@ export const remove = () => ({ operation: 'remove', input: [] })
 export const scale = () => ({ operation: 'scale' })
 export const select = (element) => ({ operation: 'select', input: [element] })
 export const transition = () => ({ operation: 'transition', input: [] })
+
+export const interpolateHcl = () => ({ operation: 'interpolateHcl' })
+export const interpolate = (pattern) => (
+  { operation: 'interpolate', input: [pattern] }
+)

@@ -1,58 +1,59 @@
 import React from 'react'
+import { sample } from 'underscore'
 import { connect } from 'react-redux'
+
 import { build } from '../composers'
 import { boundary } from '../composers/calculations'
 import { canvas } from '../composers/canvas'
-import { appear, animate, leave } from '../composers/circles'
+import { hclPalette } from '../composers/palette'
+import * as Circles from '../composers/circles'
 
-class Canvas {
-  constructor(element) {
-    let height    = element.parentNode.offsetHeight
-    let width     = element.parentNode.offsetWidth
-    let container = build(canvas({ element, height, width }))
+function fill({ id }) {
+  let startColors = [ "#8999AA", "#404852" ]
+  let endColors   = [ "#BBBA9E", "#A0A8D3" ]
+  var modulation  = (new Date).getTime() % 2.5
+  var randomized  = id * modulation
+  var palette     = build(hclPalette({ domain: [1, 20] }))
+  var start       = palette.range(startColors)
+  var final       = palette.range(endColors)
+  var spectrum    = palette.range([ start(randomized), final(randomized) ])
 
-    this.element   = element
-    this.defaults  = { height, width }
-    this.container = container
-    this.duration  = 3000
-    this.fill      = 'rgba(0, 255, 0, 0.1)'
-  }
+  return spectrum((randomized))
+}
 
-  boundaries({ domain }) {
-    let { height, width } = this.defaults
+function mapBoundaries({ domain, height, width }) {
+  let x = build(boundary({ range: [0, width], domain: domain.x }))
+  let y = build(boundary({ range: [0, height], domain: domain.y }))
+  let z = build(boundary({ range: [5, 20], domain: [1, 10] }))
 
-    let x = build(boundary({ range: [0, width], domain: domain.x }))
-    let y = build(boundary({ range: [0, height], domain: domain.y }))
-    let z = build(boundary({ range: [5, 20 ], domain: [1, 10] }))
+  return { x, y, z }
+}
 
-    return { x, y, z }
-  }
-
-  create({ data }) {
-    let composer = appear({
-      describe: data,
-      fill:     this.fill,
+class Scatter extends React.Component {
+  componentDidMount() {
+    this.chart = build(canvas({ element: this.refs.group }))
+    let composer = Circles.appear({
+      describe: this.props.data,
+      fill:     fill,
       name:     'dot',
       parser:   ({ id }) => id,
       radius:   0
     })
 
-    build(composer, this.container)
+    build(composer, this.chart)
   }
 
-  destroy({ data }) {
-    let composer = leave({ describe: data, name: 'dot', parser: ({id}) => id })
-    build(composer, this.container)
-  }
+  componentWillUpdate() {
+    let { domain, data } = this.props
+    let rect = this.refs.group.parentNode.getBoundingClientRect()
+    let { height, width } = rect
+    let boundaries = mapBoundaries({ domain, height, width })
 
-  update({ domain, data }) {
-    let boundaries = this.boundaries({ domain })
-    let cx   = dimension => boundaries.x(dimension.x)
-    let cy   = dimension => boundaries.y(dimension.y)
-    let r    = dimension => boundaries.z(dimension.z)
-    let fill = this.fill
+    let cx = dimension => boundaries.x(dimension.x)
+    let cy = dimension => boundaries.y(dimension.y)
+    let r  = dimension => boundaries.z(dimension.z)
 
-    let composer = animate({
+    let composer = Circles.animate({
       name:     'dot',
       describe: data,
       parser:   ({ id }) => id,
@@ -60,20 +61,27 @@ class Canvas {
       changes:  { cx, cy, fill, r }
     })
 
-    build(composer, this.container)
+    build(composer, this.chart)
+  }
+
+  componentWillUnmount() {
+    let composer = Circles.leave({
+      describe: this.props.data,
+      name: 'dot',
+      parser: ({id}) => id
+    })
+
+    build(composer, this.chart)
+  }
+
+  render() {
+    let styles = { height: this.props.height, width: this.props.width }
+    return(<svg style={ styles }><g ref='group' /></svg>)
   }
 }
 
-class Scatter extends React.Component {
-  componentDidMount() {
-    this.chart = new Canvas(this.refs.container)
-    this.chart.create(this.props)
-  }
-  componentWillUpdate() { this.chart.update(this.props) }
-  componentWillUnmount() { this.chart.destroy(this.props) }
-  render() { return <section ref='container' /> }
+function mapStateToProps(state) {
+  return state.chart.scatter
 }
-
-function mapStateToProps(state) { return state.chart.scatter }
 
 export default connect(mapStateToProps)(Scatter)
