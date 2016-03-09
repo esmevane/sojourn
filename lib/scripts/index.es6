@@ -2,7 +2,7 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router, browserHistory } from 'react-router'
+import { Router, hashHistory } from 'react-router'
 import Routes from './routes'
 import App from './App.es6'
 import store from './store'
@@ -20,7 +20,7 @@ import store from './store'
 let element = document.getElementById('demo')
 let content = (
   <Provider store={ store }>
-    <Router history={ browserHistory } routes={ Routes } />
+    <Router history={ hashHistory } routes={ Routes } />
   </Provider>
 )
 

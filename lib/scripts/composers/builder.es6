@@ -18,13 +18,8 @@ import d3 from 'd3'
 // To test properly, you should just build a composer and test that they
 // return the correct operations.
 //
-
 export function buildStep(builder, { operation, input }) {
   let method = Reflect.get(builder, operation)
-  if (typeof method === 'undefined') {
-    window.lastErrorBuilder = builder
-    console.log(operation, input)
-  }
   if (typeof input === 'undefined') {
     return method
   } else if (input.length) {
